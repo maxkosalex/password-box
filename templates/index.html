@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
+    <title>Password storage</title>
+</head>
+<body>
+    <div class="password-box">
+        <div class="add-delete">
+            <a id="btn-add" onclick="popup_open()">add</a>
+            <a id="btn-del" href="/registration">delete</a>
+
+        </div>
+        <div class="table">
+        <ol id="list">
+            {% for el in articles %}
+
+                <li>{{el.name}}
+                    <ul>
+                        <dt>{{el.email}}</dt>
+                        <dt style="position:relative;">{{el.password}} <a href="/{{el.id}}/delete" class="btn right-side">Delete</a></dt>
+                    </ul>
+                </li>
+
+            {% endfor %}
+        </ol>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-body">
+            <div class="popup-content">
+                <h1>Введите название, почту и пароль</h1>
+
+                    <div class="input-menu">
+                        <form method="post">
+                            <input name="input_name" id="input_name" placeholder="Name" onchange="input_data()">
+                            <input name="input_email" id="input_email" placeholder="Email" onchange="input_data()">
+                            <input name="input_password" id="input_password" placeholder="Password" onchange="input_data()">
+                            <button type="submit" id="additional_btn" disabled="disabled" class="popup-add">Add</button>
+                        </form>
+                    </div>
+                <span onclick="popup_close()" class="popup_close">&#215;</span>
+            </div>
+        </div>
+    </div>
+<script  type="text/javascript" src="{{url_for('static', filename='js/main.js')}}">
+
+</script>
+</body>
+
+</html>

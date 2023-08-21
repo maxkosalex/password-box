@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <h1>Password-storage</h1>
+            {% block hat %} {% endblock %}
+        </div>
+
+        {% block body %} {% endblock %}
+
+    </div>
+    <footer class="ftr">
+        {% block footer %}
+
+
+
+         {% endblock %}
+    </footer>
+
+
+<script  type="text/javascript" src="{{url_for('static', filename='js/main.js')}}"></script>
+
+</body>
+
+</html>

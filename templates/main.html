@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{%block title%}
+
+Главная страница
+
+{%endblock%}
+
+{% block hat %}
+
+<div class="right-center-side">
+    <a  href="/login" class="btn btn-standart">Log in</a>
+    <a  href="/registration" class="btn btn-standart">Register</a>
+    </div>
+
+
+{% endblock %}
+
+{% block body %}
+
+<div class="div-left">
+    <h1>О проекте</h1>
+    <div class>
+        <h3>Password-storage &ndash; это веб-приложенте созданное для хранения паролей от различных аккаунтов</h3>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+
+<div class="content-footer">
+
+    <span>
+        <p><a href="https://github.com/maxkosalex/steam-pars">&bull; Мой github</a></p>
+        <p><a href="/">&bull; Проект</a></p>
+    </span>
+    <span>
+        <p><a href="https://t.me/maxkosalex57">&bull; По всем вопросам</a></p>
+        <p>&bull; kosulnikov.maks@gmail.com</p>
+    </span>
+</div>
+{% endblock %}

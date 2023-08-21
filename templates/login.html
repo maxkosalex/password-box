@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{%block title%}
+
+Вход
+
+{%endblock%}
+
+
+{% block body %}
+
+<div class="log-reg">
+    <div class="login-table">
+        <form method="post">
+            <h2>Введите имя пользователя:</h2>
+            <input name="name" id="name" placeholder="Name">
+            <h2>Введите пароль:</h2>
+            <input name="password" id="password" placeholder="Password">
+            <center>
+                <p style="absolute" class="text-alert center">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </p>
+            </center>
+            <button type="submit" class="btn">Log in</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
